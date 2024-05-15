@@ -1,0 +1,3 @@
+ihm_telephone.afficheAppel
+ihm_telephone.afficheAppel$1
+ihm_telephone.afficheAppel$2

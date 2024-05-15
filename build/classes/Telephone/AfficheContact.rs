@@ -1,0 +1,2 @@
+ihm_telephone.AfficheContact$1
+ihm_telephone.AfficheContact
