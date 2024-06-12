@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class CreateTelephone extends javax.swing.JFrame {
     
     public String numero;
+    //public String numeroRex = "^\\+\\d{3} \\d{3}-?\\d{4}";
     public static final ArrayList<Telephone> listeTel = new ArrayList<>();
     
     CreateTelephone() {
@@ -105,10 +106,10 @@ public class CreateTelephone extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCtMouseClicked
-        numero = JOptionPane.showInputDialog(rootPane, "Entrer un numero", "Création d'un téléphone", JOptionPane.QUESTION_MESSAGE);
+        numero = JOptionPane.showInputDialog(rootPane, "Entrer le numero du Tel", "Création d'un téléphone", JOptionPane.QUESTION_MESSAGE);
         for(Telephone e: listeTel){
             while(e.getNumero().equals(numero)){
-                numero = JOptionPane.showInputDialog(rootPane, "Entrer un numero", "Ce telephone existe ", JOptionPane.WARNING_MESSAGE);
+                numero = JOptionPane.showInputDialog(rootPane, "Entrer le numero du Tel", "Ce telephone existe ", JOptionPane.WARNING_MESSAGE);
             }
         }
         Telephone tel = new Telephone();
@@ -116,7 +117,7 @@ public class CreateTelephone extends javax.swing.JFrame {
         if(numero.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Aucun numero saisi !", "Champ vide", JOptionPane.WARNING_MESSAGE);
         }
-        else if(numero.length()<9){
+        else if(numero.length()==9){
 
             String cheminFichier = "db_";
             File fichier = new File(cheminFichier+numero+".txt");
@@ -150,7 +151,7 @@ public class CreateTelephone extends javax.swing.JFrame {
             tel.setVisible(true);
             listeTel.add(tel);
         }else{
-            JOptionPane.showMessageDialog(rootPane, "La taille du numéro ne dois pas depaser 9 chiffres", "Champ vide", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "La taille du numéro doit ête 9 chiffres", "Champ vide", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnCtMouseClicked
 
